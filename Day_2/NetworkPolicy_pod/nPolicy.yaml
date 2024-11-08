@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: nwpolicy-nginxstop
+  namespace: abhishek
+spec:
+  podSelector:
+    matchLabels:
+      communication: stop
+  ingress:
+  

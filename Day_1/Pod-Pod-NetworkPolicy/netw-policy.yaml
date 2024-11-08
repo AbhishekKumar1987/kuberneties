@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-80
+  namespace: abhishek
+spec:
+  podSelector:
+    matchLabels:
+      nwpolicy: deny
+  ingress:
+  - ports:
+    - port: 81
