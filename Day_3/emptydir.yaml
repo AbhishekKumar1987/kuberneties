@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  namespace: abhishek
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+    volumeMounts:
+    - mountPath: /usr/share/nginx/
+      name: mount-dir
+  volumes:
+  - name: mount-dir
+    emptyDir:
+      sizeLimit: 2Gi  
